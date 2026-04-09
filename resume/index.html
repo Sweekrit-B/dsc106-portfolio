@@ -12,7 +12,7 @@
             <li><a href="../index.html">Home</a></li>
             <li><a href="../projects/index.html">Projects</a></li>
             <li><a href="../contact/index.html">Contact</a></li>
-            <li><a href="resume/index.html">Resume</a></li>
+            <li><a href="index.html" class="current">Resume</a></li>
             <li><a href="https://github.com/Sweekrit-B" target="_blank">GitHub</a></li>
         </ul>
     </nav>
@@ -20,109 +20,177 @@
         <header>
             <h1>Resume</h1>
         </header>
-
-        <article>
-            <header>
-                <h2>Education</h2>
-            </header>
+        
+        <header>
+            <h2>Education</h2>
+        </header>
+        <article class="resume-panel">
             <p>University of California, San Diego, La Jolla, CA</p>
-            <p>B.S. Data Science spec. ML/AI, Minors in Math &amp; Business Economics - GPA: 4.0 <time datetime="2027-06">Jun. 2027</time></p>
-            <p>Relevant Coursework: Data Structures and Algorithms, Statistical Methods, ML Theory, Financial/Managerial Accounting</p>
+            <p>B.S. Data Science, Minor in Business Economics <time datetime="2027-06">June 2027</time></p>
+            <p><b>Relevant Coursework:</b> Data Structures &amp; Algorithms, Data Mining, Data Management, Data Visualization, Scalable Data Analytics, Statistical Methods, Machine Learning Fundamentals, Product Management, Accounting</p>
         </article>
 
-        <article>
+        <article class="experience">
             <header>
                 <h2>Experience</h2>
             </header>
 
             <article>
                 <header>
-                    <h3>Software Engineer</h3>
-                    <p><time datetime="2025-06">Jun. 2025</time> – <time datetime="2025-09">Sept. 2025</time></p>
+                    <h3>Contract Full-Stack Software Engineer</h3>
+                    <p><time datetime="2026-01">January 2026</time> - Present</p>
+                    <p>F3 Global, Dover, DE</p>
+                </header>
+                <ul>
+                    <li>Increased client acquisition for a 501(c)(3) small business microfinancing nonprofit by building and deploying key frontend pages (client stories, About Us, privacy policy) for a redesigned homepage with React.</li>
+                    <li>Enabled content management by developing Express/MongoDB APIs to create, edit, and delete newsletter articles.</li>
+                    <li>Drove user engagement by integrating a contact system with backend routing and custom email workflows.</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <h3>Autonomous Systems Software Engineer</h3>
+                    <p><time datetime="2024-10">October 2024</time> - Present</p>
+                    <p>Yonder Dynamics, La Jolla, CA</p>
+                </header>
+                <ul>
+                    <li>Classified 10+ objects in harsh lighting and streamed detections by integrating a CNN with ROS2 and on-rover NPU.</li>
+                    <li>Reduced latency by 70% vs. BFS by building an obstacle avoidance pipeline using Theta* over PointCloud2 data.</li>
+                    <li>Enabled remote testing via a Webots-ROS2 simulation integrating 13 rover packages and a 60+ KB URDF.</li>
+                    <li>Achieved 99.8% positional accuracy by combining satellite GPS with real-time 10Hz RTCM correction data.</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <h3>Data Science &amp; Machine Learning Research Intern</h3>
+                    <p><time datetime="2024-08">August 2024</time> - Present</p>
+                    <p>UC San Diego Health, La Jolla, CA</p>
+                </header>
+                <ul>
+                    <li>Processed 1.4M KB FASTQ inputs into 13K-line CSVs with schema validation through Bash ETL pipelines.</li>
+                    <li>Extracted regional signals from 12+ high-resolution videos with motion correction by tuning a CNN/TensorFlow model.</li>
+                    <li>Achieved 79.08% accuracy on 807 features from 100+ patients by building L1-regularized logistic regression and tree-based models with k-fold cross-validation and GridSearchCV hyperparameter tuning.</li>
+                    <li>Identified disease-associated taxa across 800+ bacteria through differential abundance analysis using DESeq2.</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <h3>Software Engineering Consultant</h3>
+                    <p><time datetime="2026-01">January 2026</time> - <time datetime="2026-03">March 2026</time></p>
+                    <p>The Kaizen Academy, La Jolla, CA</p>
+                </header>
+                <ul>
+                    <li>Reduced teacher prep time by 60% by building a file upload system integrating Google Cloud and Supabase storage.</li>
+                    <li>Architected and implemented a full-stack dashboard system for 200+ users, designing PostgreSQL schemas and Express APIs for assignments, user management, file storage, gradebooks, and custom email notifications.</li>
+                    <li>Secured role-based access in dashboards by developing middleware with cookie-based auth and permission gating.</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <h3>Systems Software Engineering Consultant</h3>
+                    <p><time datetime="2025-09">September 2025</time> - <time datetime="2025-12">December 2025</time></p>
+                    <p>Brain Corp, La Jolla, CA</p>
+                </header>
+                <ul>
+                    <li>Evaluated VDA 5050 API and fleet management feasibility by building a full-stack simulation platform using MQTT, JSON messaging, and agent-based modeling of grocery-store robotics scenarios (cleaning, restocking, etc.).</li>
+                    <li>Simulated fleet communication and workflows via an MQTT-based network with structured packet exchange.</li>
+                    <li>Delivered API analysis by leading a team of 3 developers and validating behavior across fleet management scenarios.</li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <h3>AI/LLM &amp; Backend Software Engineer</h3>
+                    <p><time datetime="2025-06">June 2025</time> - <time datetime="2025-09">September 2025</time></p>
                     <p>Doe (YC S25), San Francisco, CA</p>
                 </header>
                 <ul>
-                    <li>Architected agentic LLM backend using generative AI APIs, enabling XML-prompted RAG chains with intent-based routing, structured outputs, &amp; prompt engineering; evaluated model performance &amp; increased response efficiency 140x.</li>
-                    <li>Developed Playwright-based web scraping functions for vendor platforms (Net32, Henry Schein) with for both on-demand and background retrieval flows for 100K+ dental products, integrating into SQL and vector databases.</li>
-                    <li>Built encrypted credential and context-wise user data storage system using IV-HMAC, scoped per organization and role; integrated with agent-generated task memory with structured object storage and per-message stream control.</li>
+                    <li>Improved user-facing LLM response efficiency by 140x by architecting an agentic backend with XML-prompted RAG chains integrated with Pinecone vector databases, intent routing, and structured outputs.</li>
+                    <li>Enabled retrieval for 100K+ dental products with Playwright-based scraping pipelines integrated with cloud SQL.</li>
+                    <li>Secured user data with role-scoped storage using IV-HMAC and integrated with per-message streaming memory.</li>
                     <li>Created 12+ external integrations (Ramp, Google Cloud, Microsoft) with Model Context Protocol infrastructure.</li>
                 </ul>
             </article>
 
             <article>
                 <header>
-                    <h3>Backend Software Developer Intern</h3>
-                    <p><time datetime="2025-06">Jun. 2025</time> – <time datetime="2025-08">Aug. 2025</time></p>
+                    <h3>Backend Software Engineering Intern</h3>
+                    <p><time datetime="2025-06">June 2025</time> - <time datetime="2025-08">August 2025</time></p>
                     <p>Dentdelioun LLC @ Lion Street Financial, Chicago, IL</p>
                 </header>
                 <ul>
-                    <li>Directed and designed a greenfield backend infrastructure for internal training + advisory dashboard using the MERN stack, Supabase (PostgreSQL), and Firebase to simulate client scenarios &amp; provide AI-guided support to insurance agents.</li>
-                    <li>Engineered RESTful APIs and middleware services in Express/Node for an agentic LLM framework, handling conversation state, multi-step tool use, &amp; workflows; improved system quality with prompting, feedback generation, &amp; Agile iteration.</li>
-                    <li>Developed real-time LLM-based multi-language meeting monitoring system for international advisors to record calls, retrieve summaries, &amp; gain client insights; iterated with PM on reproducible evaluation benchmarks and custom agent behaviors.</li>
+                    <li>Built AI insurer support by architecting a multi-tenant Express/Supabase backend with structured data flows.</li>
+                    <li>Engineered agentic LLM workflows with tool chaining, memory, and feedback loops for conversation handling.</li>
+                    <li>Delivered multilingual meeting insights via an LLM system with streaming transcription and summarization.</li>
                 </ul>
             </article>
 
             <article>
                 <header>
-                    <h3>Software Engineer</h3>
-                    <p><time datetime="2024-10">Oct. 2024</time> – <time datetime="2025-06">Jun. 2025</time></p>
-                    <p>Yonder Dynamics, La Jolla, CA</p>
+                    <h3>Software Engineering Consultant</h3>
+                    <p><time datetime="2025-03">March 2025</time> - <time datetime="2025-06">June 2025</time></p>
+                    <p>KlonIT AI, La Jolla, CA</p>
                 </header>
                 <ul>
-                    <li>Integrated simulation software with ROS-based systems (including user-controlled driving, object detection, and autonomous navigation) to create an internal testing framework; led migration of autonomous rover systems from ROS1 to ROS2.</li>
-                    <li>Integrated satellite GPS with ROS and structured MAVROS heading, velocity, and RTCM correction data realtime at 10Hz; tracked 3D positional accuracy at 99.8%, critical for rover navigation and obstacle avoidance algorithms.</li>
-                    <li>Led Pandas, Numpy, &amp; Matplotlib-based time series analysis of bioassay fluorescence for peak detection &amp; outlier removal.</li>
+                    <li>Built a production MCP server integrating Google Suite and local SQL sources to support LLM workflows.</li>
+                    <li>Reduced multi-platform task execution from 9 minutes to less than 1 minute by engineering prompt templates and agent pipelines enabling single-shot natural language automation of 20+ step medical and retail workflows.</li>
+                    <li>Delivered 8+ LLM system capabilities (Natural Language-to-PostgreSQL, context injection, retrieval) while coordinating 4 developers across Agile sprints and client-facing technical reviews.</li>
                 </ul>
             </article>
 
             <article>
                 <header>
-                    <h3>Data Engineering Research Intern</h3>
-                    <p><time datetime="2024-08">Aug. 2024</time> – <time datetime="2025-06">Jun. 2025</time></p>
-                    <p>Rana Lab @ UC San Diego, School of Medicine, La Jolla, CA</p>
+                    <h3>Contract Full-Stack Software Engineer</h3>
+                    <p><time datetime="2025-01">January 2025</time> - <time datetime="2025-06">June 2025</time></p>
+                    <p>UC San Diego Health, La Jolla, CA</p>
                 </header>
                 <ul>
-                    <li>Developed scalable Python/Bash ETL data pipelines with bioinfomatics libraries, Pandas, Numpy, &amp; Excel to process raw FASTQ into cleaned CSVs and visualizations; handled 1.4M+ KB input and 13K+ line outputs with schema validation.</li>
-                    <li>Integrated DNA analysis tools (ex. Telogator2, TARPON (Oxford Nanopore), TeloSeq) into downstream sequence analysis; supported chromosome-level alignment and allele-specific telomere resolution for end-of-study conclusions.</li>
-                    <li>Tuned CNN (Tensorflow)-based model &amp; processed 12+ high-resolution 2-photon microscopy recordings (up to 7MB) for fluorescence signal extraction; validated motion correction &amp; region detection accuracy through overlays &amp; runtime stats.</li>
+                    <li>Delivered gamified safety training to 15,000+ students by building a scalable MERN-based EdTech platform.</li>
+                    <li>Boosted engagement via interactive React modules with quizzes, animations, and state-driven user progression.</li>
+                    <li>Implemented secure auth and persistent state using MongoDB and Firebase with session-based progress tracking.</li>
                 </ul>
             </article>
 
             <article>
                 <header>
-                    <h3>Software Developer</h3>
-                    <p><time datetime="2024-11">Nov. 2024</time> – <time datetime="2025-06">Jun. 2025</time></p>
-                    <p>UCSD Health @ Triton Software Engineering, La Jolla, CA</p>
+                    <h3>AI Systems Software Engineering Intern</h3>
+                    <p><time datetime="2025-01">January 2025</time> - <time datetime="2025-06">June 2025</time></p>
+                    <p>Voicebotics AI, Short Hills, NJ</p>
                 </header>
                 <ul>
-                    <li>Built a full-stack MERN + Firebase EdTech application to deliver gamified electric bike and scooter safety content for 15,000+ San Diego high school students, in collaboration with UCSD Medicine to decrease the 300% rise in injuries.</li>
-                    <li>Developed TypeScript-based React UI with animated lessons, interactive modules and cards, and quiz components to increase engagement and retention; implemented scoring logic via progress tracking and Firebase-authenticated sessions.</li>
-                    <li>Engineered backend using Express and MongoDB to support secure user authentication and persistent progress storage.</li>
+                    <li>Built backend services processing 1,030+ CRM records to extract summaries, sentiment, and action items.</li>
+                    <li>Engineered a real-time NLP pipeline with prompt chaining and sliding context to enable bi-directional CRM sync.</li>
+                    <li>Implemented OAuth 2.0 authentication, LLM and GoHighLevel (CRM) API token management, and backend validation (Postman testing, logging) to support secure app installation and reliable integrations.</li>
                 </ul>
             </article>
 
             <article>
                 <header>
                     <h3>Data Science Consultant</h3>
-                    <p><time datetime="2025-01">Jan. 2025</time> – <time datetime="2025-03">Mar. 2025</time></p>
-                    <p>Out of the Blue AI @ Triton Consulting Group, La Jolla, CA</p>
+                    <p><time datetime="2025-01">January 2025</time> - <time datetime="2025-03">March 2025</time></p>
+                    <p>Out of the Blue AI, La Jolla, CA</p>
                 </header>
                 <ul>
-                    <li>Developed hierarchical time-series forecasting models using SciKit-Learn, Prophet, &amp; ARIMA on 1M+ row Parquet datasets to identify 40+ critical incidents across device and geography segments for e-commerce and small business analytics.</li>
-                    <li>Performed in-depth root cause analysis using subgroup deviation metrics (absolute/squared error), Pandas, NumPy, &amp; DBSCAN clustering to attribute anomalies to specific dimensions and temporal patterns for business advisory.</li>
-                    <li>Built an interactive Streamlit + Plotly-based user-facing dashboard for visualizing anomaly trends, confidence intervals, and subgroup contributions to support strategic decision-making around product sales, holiday performance, and other metrics.</li>
+                    <li>Identified 40+ critical incidents in e-commerce analytics across device and geography segments by building hierarchical time-series models (Prophet, ARIMA, scikit-learn) on 1M+ row Parquet datasets.</li>
+                    <li>Attributed temporal anomalies to key dimensions using subgroup error metrics, Pandas, and DBSCAN clustering.</li>
+                    <li>Enabled data-driven decisions via Streamlit/Plotly dashboard visualizing anomaly trends and segment contributions.</li>
                 </ul>
             </article>
+
         </article>
 
-        <article>
-            <header>
-                <h2>Technical Skills</h2>
-            </header>
+        <header>
+            <h2>Technical Skills</h2>
+        </header>
+        <article class="resume-panel">
             <ul>
-                <li>Languages &amp; Frameworks: Python, Java, C++, JavaScript/TypeScript, SQL, Kotlin, HTML/CSS, MERN stack</li>
-                <li>Data &amp; AI/ML: NoSQL, MySQL, Vector DBs, Pandas, NumPy, Excel, SciKit, Tensorflow, RAG, Prompting, Agents, MCP</li>
-                <li>Cloud &amp; DevOps: AWS, Google Cloud, Docker, Git, CI/CD, Agile, Markdown, Rest APIs, Vercel, Firebase, PostHog</li>
+                <li><b>Languages &amp; Frameworks:</b> Python, Java, C++, JavaScript/TypeScript, SQL, Kotlin, HTML/CSS, MERN stack</li>
+                <li><b>Data &amp; AI/ML:</b> NoSQL, MySQL, Vector DBs, Pandas, NumPy, Excel, scikit-learn, TensorFlow, RAG, Prompting, Agents, MCP</li>
+                <li><b>Cloud &amp; DevOps:</b> AWS, Google Cloud, Docker, Git, CI/CD, Agile, Markdown, REST APIs, Vercel, Firebase, PostHog</li>
             </ul>
         </article>
     </section>

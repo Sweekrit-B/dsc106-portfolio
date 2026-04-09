@@ -1,3 +1,8 @@
+:root {
+	--color-accent: oklch(52.467% 0.15763 356.063);
+	--color-current: oklch(80% 3% 200);
+}
+
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
@@ -5,8 +10,149 @@ body {
   font: 100%/1.5 system-ui;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.1;
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: 400%;
+}
+
+input,
+textarea,
+button {
+	font: inherit;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
 	display: block;
+}
+
+nav {
+	display: flex;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+.content {
+	max-width: 100ch;
+	margin-inline: auto;
+	padding: 2rem;
+}
+
+nav ul {
+	display: contents;
+}
+
+nav ul li {
+	display: contents;
+}
+
+nav a {
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+	padding: 0.5em;
+	flex: 1;
+}
+
+nav a:hover {
+	background-color: oklch(from var(--color-accent) 95% 5% h);
+	border-bottom: 0.4em solid var(--color-accent);
+	padding-bottom: 0.1em;
+}
+
+nav a.current {
+	border-bottom: 0.4em solid var(--color-current);
+	padding-bottom: 0.1em;
+}
+
+nav a.current:hover {
+	background-color: oklch(from var(--color-current) 95% 5% h);
+	border-bottom: 0.4em solid var(--color-current);
+	padding-bottom: 0.1em;
+}
+
+form {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 1em;
+}
+
+label {
+	display: grid;
+	grid-template-columns: subgrid;
+	grid-column: 1 / -1;
+}
+
+button {
+	grid-column: 1 / -1;
+}
+
+.projects {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+	grid-template-rows: repeat(3, auto);
+	min-width: 15em;
+	max-width: 1fr;
+	gap: 1em;
+}
+
+.projects article {
+	display: grid;
+	grid-template-rows: subgrid;
+	grid-row: span 3;
+}
+
+.projects h2 {
+	margin: 0;
+}
+
+.experience {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+	gap: 1em;
+}
+
+.experience header {
+	grid-column: 1 / -1;
+}
+
+.experience article {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid oklch(80% 3% 200);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	background-color: oklch(98% 1% 200);
+	grid-template-columns: subgrid;
+}
+
+.experience article header {
+	min-height: 7.5rem;
+	margin-bottom: 0.75rem;
+}
+
+.experience article h3 {
+	margin-top: 0;
+}
+
+.resume-panel {
+	border: 1px solid oklch(80% 3% 200);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	background-color: oklch(98% 1% 200);
+	margin-bottom: 1em;
+}
+
+.resume-panel h2 {
+	margin-top: 0;
 }
