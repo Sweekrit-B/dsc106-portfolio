@@ -1,6 +1,7 @@
 :root {
 	--color-accent: oklch(52.467% 0.15763 356.063);
 	--color-current: oklch(80% 3% 200);
+	color-scheme: dark;
 }
 
 body {
@@ -50,9 +51,10 @@ img {
 }
 
 nav {
+	--border-color: oklch(50% 10% 200 / 40%);
 	display: flex;
 	margin-bottom: 1rem;
-	border-bottom: 1px solid oklch(80% 3% 200);
+	border-bottom: 1px solid var(--border-color);
 }
 
 .content {
@@ -78,7 +80,7 @@ nav a {
 }
 
 nav a:hover {
-	background-color: oklch(from var(--color-accent) 95% 5% h);
+	background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 	border-bottom: 0.4em solid var(--color-accent);
 	padding-bottom: 0.1em;
 }
@@ -89,7 +91,7 @@ nav a.current {
 }
 
 nav a.current:hover {
-	background-color: oklch(from var(--color-current) 95% 5% h);
+	background-color: color-mix(in oklch, var(--color-current), canvas 85%);
 	border-bottom: 0.4em solid var(--color-current);
 	padding-bottom: 0.1em;
 }
@@ -142,10 +144,10 @@ button {
 .experience article {
 	display: flex;
 	flex-direction: column;
-	border: 1px solid oklch(80% 3% 200);
+	border: 1px solid var(--border-color);
 	border-radius: 0.5rem;
 	padding: 1rem;
-	background-color: oklch(98% 1% 200);
+	background-color: color-mix(in oklch, var(--color-current), canvas 85%);
 	grid-template-columns: subgrid;
 }
 
@@ -159,10 +161,10 @@ button {
 }
 
 .resume-panel {
-	border: 1px solid oklch(80% 3% 200);
+	border: 1px solid var(--border-color);
 	border-radius: 0.5rem;
 	padding: 1rem;
-	background-color: oklch(98% 1% 200);
+	background-color: color-mix(in oklch, var(--color-current), canvas 85%);
 	margin-bottom: 1em;
 }
 

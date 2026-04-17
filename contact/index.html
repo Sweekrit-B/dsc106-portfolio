@@ -7,22 +7,9 @@
     <title>Contact Form</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../projects/index.html">Projects</a></li>
-            <li><a href="index.html" class="current">Contact</a></li>
-            <li><a href="../resume/index.html">Resume</a></li>
-            <li><a href="https://github.com/Sweekrit-B" target="_blank">GitHub</a></li>
-        </ul>
-    </nav>
     <div class="content">
         <h1>Contact Me</h1>
-        <form action="mailto:sbhatnagar@ucsd.edu" method="post" enctype="text/plain">
-            <label>
-                Email:
-                <input type="email" name="email">
-            </label>
+        <form action="mailto:sbhatnagar@ucsd.edu" method="GET" id="contact-form">
             <label>
                 Subject:
                 <input type="text" name="subject">
@@ -35,4 +22,5 @@
         </form>
     </div>
 </body>
+<script type="module" src="../global.js"></script>
 </html>
