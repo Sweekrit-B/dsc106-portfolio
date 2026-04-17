@@ -12,7 +12,7 @@ currentLink?.classList.add('current');
 
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "/dsc106/labs/dsc106-portfolio/"                  // Local server
-  : "/website/";         // GitHub Pages repo name
+  : "/dsc106-portfolio/";         // GitHub Pages repo name
 
 let pages = [
     { url: '', title: 'Home' },
