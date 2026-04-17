@@ -24,12 +24,20 @@ let pages = [
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
+
+const osPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const osPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+let autoLabel = 'Automatic';
+if (osPrefersDark) autoLabel = 'Automatic (Dark)';
+else if (osPrefersLight) autoLabel = 'Automatic (Light)';
+
 document.body.insertAdjacentHTML(
   'afterbegin',
   `
     <label class="color-scheme" style="position: absolute; top: 4rem; right: 1rem; display: flex; align-items: center; gap: 0.5em;">
       <span>Theme:</span>
       <select id="color-scheme-select">
+        <option value="auto">${autoLabel}</option>
         <option value="light">Light</option>
         <option value="dark">Dark</option>
       </select>
@@ -38,17 +46,27 @@ document.body.insertAdjacentHTML(
 );
 
 const select = document.querySelector('#color-scheme-select');
+function applyColorScheme(value) {
+  // CSS color-scheme accepts: normal | light | dark | light dark
+  const cssValue = value === 'auto' ? 'light dark' : value;
+  document.documentElement.style.setProperty('color-scheme', cssValue);
+}
+
 select.addEventListener('input', function(event) {
   console.log('color scheme changed to', event.target.value);
   localStorage.colorScheme = event.target.value;
-  document.documentElement.style.setProperty('color-scheme', event.target.value);
+  applyColorScheme(event.target.value);
 });
 
 // Set the initial color scheme based on localStorage or default to 'light'
 const savedColorScheme = localStorage.colorScheme;
 if (savedColorScheme) {
   select.value = savedColorScheme;
-  document.documentElement.style.setProperty('color-scheme', savedColorScheme);
+  applyColorScheme(savedColorScheme);
+} else {
+  // Default to following the OS theme.
+  select.value = 'auto';
+  applyColorScheme('auto');
 }
 
 for (let p of pages) {
