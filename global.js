@@ -34,14 +34,11 @@ else if (osPrefersLight) autoLabel = 'Automatic (Light)';
 document.body.insertAdjacentHTML(
   'afterbegin',
   `
-    <label class="color-scheme" style="position: absolute; top: 4rem; right: 1rem; display: flex; align-items: center; gap: 0.5em;">
-      <span>Theme:</span>
-      <select id="color-scheme-select">
-        <option value="auto">${autoLabel}</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
-    </label>
+    <select id="color-scheme-select" aria-label="Theme">
+      <option value="auto">${autoLabel}</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
   `
 );
 
@@ -155,6 +152,74 @@ export function renderProjects(projects, containerElement, headingLevel = 'h3') 
     containerElement.appendChild(article);
   }
 };
+
+export function renderResumeComponents(resume) {
+  if (!resume) return;
+
+  const educationPanel = document.querySelector('#education-panel');
+  if (educationPanel) {
+    const coursework = Array.isArray(resume.education?.coursework)
+      ? resume.education.coursework.join(', ')
+      : '';
+
+    educationPanel.innerHTML = `
+      <section class="resume-education">
+      <p class="resume-school">${resume.education?.school ?? ''}</p>
+      <p>
+        ${resume.education?.degree ?? ''}
+        <time datetime="${resume.education?.graduationDate ?? ''}">${resume.education?.graduation ?? ''}</time>
+      </p>
+      <p><b>Relevant Coursework:</b> ${coursework}</p>
+      </section>
+    `;
+  }
+
+  const experienceGrid = document.querySelector('#experience-grid');
+  if (experienceGrid && Array.isArray(resume.experience)) {
+    experienceGrid.innerHTML = '';
+
+    for (const role of resume.experience) {
+      const article = document.createElement('article');
+      const bullets = Array.isArray(role.bullets)
+        ? role.bullets.map((bullet) => `<li>${bullet}</li>`).join('')
+        : '';
+      const endMarkup = role.endDate
+        ? `<time datetime="${role.endDate}">${role.end}</time>`
+        : role.end ?? '';
+
+      article.innerHTML = `
+        <header>
+          <h3>${role.role}</h3>
+          <p class="resume-meta"><time datetime="${role.startDate ?? ''}">${role.start ?? ''}</time> - ${endMarkup}</p>
+          <p class="resume-meta">${role.company}, ${role.location}</p>
+        </header>
+        <ul>${bullets}</ul>
+      `;
+
+      experienceGrid.appendChild(article);
+    }
+  }
+
+  const skillsPanel = document.querySelector('#skills-panel');
+  if (skillsPanel && Array.isArray(resume.technicalSkills)) {
+    skillsPanel.innerHTML = `
+      <section class="resume-skills-grid">
+        ${resume.technicalSkills
+          .map(
+            (group) => `
+              <article class="resume-skill-group">
+                <h3>${group.category}</h3>
+                <ul class="project-skills">
+                  ${(group.items ?? []).map((item) => `<li>${item}</li>`).join('')}
+                </ul>
+              </article>
+            `
+          )
+          .join('')}
+      </section>
+    `;
+  }
+}
 
 export function fetchGithubData(username) {
   return fetchJSON(`https://api.github.com/users/${username}`);

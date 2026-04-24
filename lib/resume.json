@@ -1,0 +1,192 @@
+{
+  "education": {
+    "school": "University of California, San Diego, La Jolla, CA",
+    "degree": "B.S. Data Science, Minor in Business Economics",
+    "graduation": "June 2027",
+    "graduationDate": "2027-06",
+    "coursework": [
+      "Data Structures & Algorithms",
+      "Data Mining",
+      "Data Management",
+      "Data Visualization",
+      "Scalable Data Analytics",
+      "Statistical Methods",
+      "Machine Learning Fundamentals",
+      "Product Management",
+      "Accounting"
+    ]
+  },
+  "experience": [
+    {
+      "role": "Contract Full-Stack Software Engineer",
+      "company": "F3 Global",
+      "location": "Dover, DE",
+      "start": "January 2026",
+      "startDate": "2026-01",
+      "end": "Present",
+      "endDate": null,
+      "bullets": [
+        "Increased client acquisition for a 501(c)(3) small business microfinancing nonprofit by building and deploying key frontend pages (client stories, About Us, privacy policy) for a redesigned homepage with React.",
+        "Enabled content management by developing Express/MongoDB APIs to create, edit, and delete newsletter articles.",
+        "Drove user engagement by integrating a contact system with backend routing and custom email workflows."
+      ]
+    },
+    {
+      "role": "Autonomous Systems Software Engineer",
+      "company": "Yonder Dynamics",
+      "location": "La Jolla, CA",
+      "start": "October 2024",
+      "startDate": "2024-10",
+      "end": "Present",
+      "endDate": null,
+      "bullets": [
+        "Classified 10+ objects in harsh lighting and streamed detections by integrating a CNN with ROS2 and on-rover NPU.",
+        "Reduced latency by 70% vs. BFS by building an obstacle avoidance pipeline using Theta* over PointCloud2 data.",
+        "Enabled remote testing via a Webots-ROS2 simulation integrating 13 rover packages and a 60+ KB URDF.",
+        "Achieved 99.8% positional accuracy by combining satellite GPS with real-time 10Hz RTCM correction data."
+      ]
+    },
+    {
+      "role": "Data Science & Machine Learning Research Intern",
+      "company": "UC San Diego Health",
+      "location": "La Jolla, CA",
+      "start": "August 2024",
+      "startDate": "2024-08",
+      "end": "Present",
+      "endDate": null,
+      "bullets": [
+        "Processed 1.4M KB FASTQ inputs into 13K-line CSVs with schema validation through Bash ETL pipelines.",
+        "Extracted regional signals from 12+ high-resolution videos with motion correction by tuning a CNN/TensorFlow model.",
+        "Achieved 79.08% accuracy on 807 features from 100+ patients by building L1-regularized logistic regression and tree-based models with k-fold cross-validation and GridSearchCV hyperparameter tuning.",
+        "Identified disease-associated taxa across 800+ bacteria through differential abundance analysis using DESeq2."
+      ]
+    },
+    {
+      "role": "Software Engineering Consultant",
+      "company": "The Kaizen Academy",
+      "location": "La Jolla, CA",
+      "start": "January 2026",
+      "startDate": "2026-01",
+      "end": "March 2026",
+      "endDate": "2026-03",
+      "bullets": [
+        "Reduced teacher prep time by 60% by building a file upload system integrating Google Cloud and Supabase storage.",
+        "Architected and implemented a full-stack dashboard system for 200+ users, designing PostgreSQL schemas and Express APIs for assignments, user management, file storage, gradebooks, and custom email notifications.",
+        "Secured role-based access in dashboards by developing middleware with cookie-based auth and permission gating."
+      ]
+    },
+    {
+      "role": "Systems Software Engineering Consultant",
+      "company": "Brain Corp",
+      "location": "La Jolla, CA",
+      "start": "September 2025",
+      "startDate": "2025-09",
+      "end": "December 2025",
+      "endDate": "2025-12",
+      "bullets": [
+        "Evaluated VDA 5050 API and fleet management feasibility by building a full-stack simulation platform using MQTT, JSON messaging, and agent-based modeling of grocery-store robotics scenarios (cleaning, restocking, etc.).",
+        "Simulated fleet communication and workflows via an MQTT-based network with structured packet exchange.",
+        "Delivered API analysis by leading a team of 3 developers and validating behavior across fleet management scenarios."
+      ]
+    },
+    {
+      "role": "AI/LLM & Backend Software Engineer",
+      "company": "Doe (YC S25)",
+      "location": "San Francisco, CA",
+      "start": "June 2025",
+      "startDate": "2025-06",
+      "end": "September 2025",
+      "endDate": "2025-09",
+      "bullets": [
+        "Improved user-facing LLM response efficiency by 140x by architecting an agentic backend with XML-prompted RAG chains integrated with Pinecone vector databases, intent routing, and structured outputs.",
+        "Enabled retrieval for 100K+ dental products with Playwright-based scraping pipelines integrated with cloud SQL.",
+        "Secured user data with role-scoped storage using IV-HMAC and integrated with per-message streaming memory.",
+        "Created 12+ external integrations (Ramp, Google Cloud, Microsoft) with Model Context Protocol infrastructure."
+      ]
+    },
+    {
+      "role": "Backend Software Engineering Intern",
+      "company": "Dentdelioun LLC @ Lion Street Financial",
+      "location": "Chicago, IL",
+      "start": "June 2025",
+      "startDate": "2025-06",
+      "end": "August 2025",
+      "endDate": "2025-08",
+      "bullets": [
+        "Built AI insurer support by architecting a multi-tenant Express/Supabase backend with structured data flows.",
+        "Engineered agentic LLM workflows with tool chaining, memory, and feedback loops for conversation handling.",
+        "Delivered multilingual meeting insights via an LLM system with streaming transcription and summarization."
+      ]
+    },
+    {
+      "role": "Software Engineering Consultant",
+      "company": "KlonIT AI",
+      "location": "La Jolla, CA",
+      "start": "March 2025",
+      "startDate": "2025-03",
+      "end": "June 2025",
+      "endDate": "2025-06",
+      "bullets": [
+        "Built a production MCP server integrating Google Suite and local SQL sources to support LLM workflows.",
+        "Reduced multi-platform task execution from 9 minutes to less than 1 minute by engineering prompt templates and agent pipelines enabling single-shot natural language automation of 20+ step medical and retail workflows.",
+        "Delivered 8+ LLM system capabilities (Natural Language-to-PostgreSQL, context injection, retrieval) while coordinating 4 developers across Agile sprints and client-facing technical reviews."
+      ]
+    },
+    {
+      "role": "Contract Full-Stack Software Engineer",
+      "company": "UC San Diego Health",
+      "location": "La Jolla, CA",
+      "start": "January 2025",
+      "startDate": "2025-01",
+      "end": "June 2025",
+      "endDate": "2025-06",
+      "bullets": [
+        "Delivered gamified safety training to 15,000+ students by building a scalable MERN-based EdTech platform.",
+        "Boosted engagement via interactive React modules with quizzes, animations, and state-driven user progression.",
+        "Implemented secure auth and persistent state using MongoDB and Firebase with session-based progress tracking."
+      ]
+    },
+    {
+      "role": "AI Systems Software Engineering Intern",
+      "company": "Voicebotics AI",
+      "location": "Short Hills, NJ",
+      "start": "January 2025",
+      "startDate": "2025-01",
+      "end": "June 2025",
+      "endDate": "2025-06",
+      "bullets": [
+        "Built backend services processing 1,030+ CRM records to extract summaries, sentiment, and action items.",
+        "Engineered a real-time NLP pipeline with prompt chaining and sliding context to enable bi-directional CRM sync.",
+        "Implemented OAuth 2.0 authentication, LLM and GoHighLevel (CRM) API token management, and backend validation (Postman testing, logging) to support secure app installation and reliable integrations."
+      ]
+    },
+    {
+      "role": "Data Science Consultant",
+      "company": "Out of the Blue AI",
+      "location": "La Jolla, CA",
+      "start": "January 2025",
+      "startDate": "2025-01",
+      "end": "March 2025",
+      "endDate": "2025-03",
+      "bullets": [
+        "Identified 40+ critical incidents in e-commerce analytics across device and geography segments by building hierarchical time-series models (Prophet, ARIMA, scikit-learn) on 1M+ row Parquet datasets.",
+        "Attributed temporal anomalies to key dimensions using subgroup error metrics, Pandas, and DBSCAN clustering.",
+        "Enabled data-driven decisions via Streamlit/Plotly dashboard visualizing anomaly trends and segment contributions."
+      ]
+    }
+  ],
+  "technicalSkills": [
+    {
+      "category": "Languages & Frameworks",
+      "items": ["Python", "Java", "C++", "JavaScript/TypeScript", "SQL", "Kotlin", "HTML/CSS", "MERN stack"]
+    },
+    {
+      "category": "Data & AI/ML",
+      "items": ["NoSQL", "MySQL", "Vector DBs", "Pandas", "NumPy", "Excel", "scikit-learn", "TensorFlow", "RAG", "Prompting", "Agents", "MCP"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "items": ["AWS", "Google Cloud", "Docker", "Git", "CI/CD", "Agile", "Markdown", "REST APIs", "Vercel", "Firebase", "PostHog"]
+    }
+  ]
+}
