@@ -93,3 +93,69 @@ const contact = form?.addEventListener('submit', function(event) {
         location.href = `mailto:sbhatnagar@ucsd.edu?subject=${encodeURIComponent(document.querySelector('input[name="subject"]').value)}&body=${encodeURIComponent(document.querySelector('textarea[name="body"]').value)}`;
     }
 });
+
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+};
+
+export function renderProjects(projects, containerElement, headingLevel = 'h3') {
+  if (!containerElement) return;
+  if (!projects) return;
+
+  const projectList = Array.isArray(projects) ? projects : [projects];
+  containerElement.innerHTML = ''; // Clear existing content
+
+  for (const project of projectList) {
+    const article = document.createElement('article');
+    const skills = Array.isArray(project.skills) && project.skills.length > 0
+      ? `
+        <section class="project-section project-skills-section">
+          <h3>Skills</h3>
+          <ul class="project-skills">
+            ${project.skills.map((skill) => `<li>${skill}</li>`).join('')}
+          </ul>
+        </section>
+      `
+      : '';
+    const links = Array.isArray(project.links) && project.links.length > 0
+      ? `
+        <section class="project-section project-links-section">
+          <h3>Links</h3>
+          <ul class="project-links">
+            ${project.links.map((link) => `
+              <li>
+                <a href="${link.href}"${link.href.startsWith('http') ? ' target="_blank" rel="noreferrer"' : ''}>
+                  ${link.label}
+                </a>
+              </li>
+            `).join('')}
+          </ul>
+        </section>
+      `
+      : '';
+
+    article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <p class="project-year">${project.year ?? ''}</p>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+      ${skills}
+      ${links}
+    `;
+    containerElement.appendChild(article);
+  }
+};
+
+export function fetchGithubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
