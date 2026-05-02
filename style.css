@@ -137,13 +137,13 @@ button {
 }
 
 .projects article {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 0.85rem;
 	padding: 1rem;
 	border: 1px solid color-mix(in oklch, canvastext 12%, canvas);
 	border-radius: 0.75rem;
 	background: color-mix(in oklch, canvas 94%, canvastext 6%);
-	align-content: start;
 }
 
 .projects h2 {
@@ -160,6 +160,16 @@ button {
 .projects article img {
 	border-radius: 0.5rem;
 	overflow: hidden;
+}
+
+.project-video {
+	border-radius: 0.5rem;
+	overflow: hidden;
+	margin: 0.85rem 0;
+}
+
+.project-video iframe {
+	border-radius: 0.5rem;
 }
 
 .projects article p {
@@ -192,14 +202,21 @@ button {
 	background: color-mix(in oklch, var(--color-current), canvas 82%);
 }
 
-.project-links {
-	flex-direction: column;
-	gap: 0.35rem;
-}
+
 
 .project-links a {
-	text-decoration: underline;
-	text-underline-offset: 0.15em;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.5rem;
+	background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+	color: inherit;
+	transition: background-color 140ms ease, transform 140ms ease;
+}
+
+.project-links a:hover {
+	background-color: color-mix(in oklch, var(--color-accent), canvas 75%);
+	transform: translateY(-2px);
 }
 
 #profile-stats {
@@ -351,4 +368,142 @@ button {
 .resume-skill-group h3 {
 	margin: 0 0 0.5rem;
 	font-size: 1rem;
+}
+
+#projects-plot {
+  max-width: min(20em, 50vw);
+  margin-block: 2em;
+  overflow: visible;
+}
+
+#projects-plot:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+	transition: 300ms;
+  }
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 0.25em;
+}
+
+.legend {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+	gap: 1rem;
+	border: 1px solid color-mix(in oklch, canvastext 12%, canvas);
+	border-radius: 0.75rem;
+	padding: 1rem;
+	margin: 0;
+	background: color-mix(in oklch, canvas 94%, canvastext 6%);
+	list-style: none;
+	flex: 1;
+	min-width: 15em;
+}
+
+.legend li {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.plot-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.searchBar {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	border: 1px solid color-mix(in oklch, canvastext 12%, canvas);
+	border-radius: 0.75rem;
+	background: color-mix(in oklch, canvas 94%, canvastext 6%);
+	color: inherit;
+	font-size: 1rem;
+	transition: border-color 140ms ease, box-shadow 140ms ease;
+	margin: 1rem 0;
+}
+
+.searchBar:focus {
+	outline: none;
+	border-color: var(--color-accent);
+	box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent), transparent 80%);
+}
+
+/* Search controls container */
+.search-controls {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+.search-controls .searchBar {
+	flex: 1;
+	margin: 0;
+}
+
+.search-controls .clearButton {
+	margin: 0;
+	flex-shrink: 0;
+}
+
+#projects-plot path {
+	transition: transform 220ms ease, opacity 220ms ease, filter 220ms ease;
+	transform-box: fill-box;
+	transform-origin: center;
+	cursor: pointer;
+}
+
+/* When any slice is selected, fade non-selected slices */
+#projects-plot:has(path.selected) path:not(.selected) {
+	opacity: 0.35;
+}
+
+/* Selected slice pops out */
+#projects-plot path.selected {
+	/* Use per-path color variable when selected (set from JS) */
+	fill: var(--color) !important;
+	transform: scale(1.06);
+	filter: drop-shadow(0 8px 16px rgba(0,0,0,0.18));
+	stroke: color-mix(in oklch, canvastext 30%, canvas);
+	stroke-width: 1.5;
+}
+
+/* Hover effect */
+#projects-plot path:hover {
+	transform: scale(1.04);
+}
+
+/* Clear button styling */
+.clearButton {
+	padding: 0.75rem 1.5rem;
+	border: none;
+	border-radius: 0.75rem;
+	background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+	color: inherit;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+	margin-top: 1rem;
+}
+
+.clearButton:hover {
+	background-color: color-mix(in oklch, var(--color-accent), canvas 75%);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px color-mix(in oklch, var(--color-accent), transparent 70%);
+}
+
+.clearButton:active {
+	transform: translateY(0);
 }

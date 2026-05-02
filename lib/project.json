@@ -1,166 +1,98 @@
 [
   {
-    "title": "Aletheia - Medical Aid & Pill Tracking Agentic AI Web App @ CalHacks AI 2025",
-    "year": 2025,
+    "title": "Climate-Driven Power Outage Prediction",
+    "year": "Fall 2025",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "description": "Trained Decision Tree & Random Forest models on 1,534 outages with 10+ climate/geospatial features using k-fold CV & GridSearchCV, improving accuracy from 57.9% → 69.4% (+11.5%). Engineered custom features including seasonal encoding, hurricane binarization, multicollinearity reduction, & applied encoding with median & probabilistic imputation. Performed EDA, permutation testing, & missingness analysis using TVD-based statistics, validating effects on outage duration & fairness via subgroup accuracy testing.",
+    "skills": ["Python", "Decision Trees", "Random Forest", "Machine Learning", "GridSearchCV", "Feature Engineering", "Data Analysis"],
+    "links": [
+      { "label": "Live Demo", "href": "https://sweekrit-b.github.io/powerOutageML/" },
+      { "label": "GitHub", "href": "https://github.com/Sweekrit-B/powerOutageML" }
+    ]
+  },
+  {
+    "title": "Aletheia - Medical Aid & Pill Tracking Agentic AI Web App @ CalHacks AI 2025",
+    "year": "Summer 2025",
+    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "video": "https://www.youtube.com/watch?v=aNmi3gI5nAk",
     "description": "Developed structured agentic AIs using Letta and Anthropic Claude 4, equipped with custom tools such as drug querying and web search, for personalized user recommendations regarding medicinal questions. Created inference models for insurance company grading and image detection models for label reading with Gemini Generative AI API.",
     "skills": ["Python", "Agentic AI", "Letta", "Anthropic Claude 4"],
     "links": [
-      { "label": "GitHub - siddharthsiva/aletheia", "href": "https://github.com/siddharthsiva/aletheia" },
-      { "label": "Aletheia Demo", "href": "#aletheia-demo" }
+      { "label": "GitHub", "href": "https://github.com/siddharthsiva/aletheia" }
     ]
   },
   {
     "title": "TallyUp - Hierarchal Club Finance Tracking App @ LA Hacks 2025",
-    "year": 2025,
+    "year": "Spring 2025",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+    "video": "https://www.youtube.com/watch?v=BPfS8f4Acwg",
     "description": "Built backend from scratch using the MERN stack with React Native frontend; modeled nested groups, subgroups, and per-user balances using MongoDB with relational object structures and nested document design. Engineered RESTful APIs with Express and Axios for real-time debt tracking, custom member assignments, and ledger sync across recursive group trees; tackled bi-directional state-sharing logic between users and nested club structures.",
     "skills": ["MongoDB", "React Native", "Express", "Axios", "MERN Stack", "Nested Documents"],
     "links": [
-      { "label": "GitHub - zachthefischer/TallyUp: LAHacks 2025", "href": "https://github.com/zachthefischer/TallyUp" },
-      { "label": "TallyUp Demo - LA Hacks", "href": "#tallyup-demo" }
+      { "label": "GitHub", "href": "https://github.com/zachthefischer/TallyUp" }
     ]
   },
   {
     "title": "ML Paper Recommender",
-    "year": 2025,
+    "year": "Spring 2025",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Used queried ArXIV dataset, TF-IDF vectorization, and cosine similarity to return top search results for scientific papers based on abstract.",
     "skills": ["Scikit-Learn", "Python", "TF-IDF"],
     "links": [
-      { "label": "Paper Recommender Web App", "href": "#paper-recommender" }
+      { "label": "Live Demo", "href": "https://paper-recommender-ml.streamlit.app/" },
+      { "label": "GitHub", "href": "https://github.com/Sweekrit-B/lumaa-spring-2025-ai-ml-sweekritb" }
     ]
   },
   {
     "title": "Airline Customer Satisfaction Prediction",
-    "year": 2024,
+    "year": "Fall 2024",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Created data visualization using Seaborn and Matplotlib and performed high-level analysis for multidimensional CSV customer data; proposed and tested three preprocessing pipelines for highest prediction accuracy. Tested various ML models with Scikit-Learn, including Random Forests, KNNs, and XGBoost to develop high accuracy (96%), low error predictions and feature importances, used to draw business insights for customer acquisition. Consolidated findings into final stakeholder presentation providing personalized business suggestions to airline companies to increase customer satisfaction and capture greater market share for maximal profit.",
     "skills": ["Seaborn", "Git", "Matplotlib", "Scikit-Learn", "Random Forest", "XGBoost", "KNN"],
     "links": [
-      { "label": "GitHub - Sweekrit-B/Airline-Predictions", "href": "https://github.com/Sweekrit-B/Airline-Predictions" }
+      { "label": "GitHub", "href": "https://github.com/Sweekrit-B/Airline-Predictions" }
     ]
   },
   {
     "title": "To Do List App",
-    "year": 2024,
+    "year": "Fall 2024",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Associated with Triton Software Engineering. Created dynamically-updating to-do list app utilizing the MERN stack, complete with functionality to check and uncheck tasks, edit task information, and assign users. Managed backend database with MongoDB Atlas and tested API calls with Postman.",
     "skills": ["MongoDB", "React.js", "MERN Stack", "Postman", "MongoDB Atlas", "Express", "Node.js", "JavaScript"],
     "links": [
-      { "label": "GitHub - Sweekrit-B/to-do-app", "href": "https://github.com/Sweekrit-B/to-do-app" }
+      { "label": "GitHub", "href": "https://github.com/Sweekrit-B/to-do-app" }
     ]
   },
   {
     "title": "Bioinformatics Algorithms",
-    "year": 2024,
+    "year": "Summer 2024",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Associated with UC San Diego School of Medicine. Replicated the Needleman-Wunsch algorithm, inputting randomized nucleotide sequences to determine similarity. Built the Hidden Markov Model, determining the existence of mRNA coding regions through probability matrices. Developed the Burrows-Wheeler Algorithm for matching sampled reads to nucleotide sequences via data transformation.",
     "skills": ["Recursion", "Backtracking", "Algorithms", "Python", "Dynamic Programming", "Bioinformatics", "HMM"],
     "links": [
-      { "label": "GitHub - Sweekrit-B/bioinfo-algos", "href": "https://github.com/Sweekrit-B/bioinfo-algos" }
+      { "label": "GitHub", "href": "https://github.com/Sweekrit-B/bioinfo-algos" }
     ]
   },
   {
     "title": "Calendar Application",
-    "year": 2024,
+    "year": "Summer 2024",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Developed a working Android calendar application; app displays user data from Google Calendar plug-ins, adds calendar events using a custom-made form, and sends invites to event guests.",
     "skills": ["Google Calendar API", "Kotlin", "Android"],
     "links": [
-      { "label": "GitHub - Sweekrit-B/Calendar-Test", "href": "https://github.com/Sweekrit-B/Calendar-Test" }
+      { "label": "GitHub", "href": "https://github.com/Sweekrit-B/Calendar-Test" }
     ]
   },
   {
     "title": "Epidemics.io",
-    "year": 2024,
+    "year": "Summer 2024",
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Associated with buildspace. Developed epidemiology simulator using Mesa and NetworkX Python libraries capable of handling 500+ agents in gridded torus maps and randomly-generated network models to showcase the spread of a user-defined infection. Identified key risk factors for disease spread and implemented as agent properties.",
+    "video": "https://www.youtube.com/watch?v=5DtQ335HXNI",
+    "description": "Associated with buildspace s5. Developed epidemiology simulator using Mesa and NetworkX Python libraries capable of handling 500+ agents in gridded torus maps and randomly-generated network models to showcase the spread of a user-defined infection. Identified key risk factors for disease spread and implemented as agent properties.",
     "skills": ["Data Visualization", "Epidemiology", "Mesa", "NetworkX", "Python"],
     "links": [
-      { "label": "Web Application - Epidemics.io", "href": "#epidemics-webapp" },
-      { "label": "GitHub - Sweekrit-B/epidemicsio", "href": "https://github.com/Sweekrit-B/epidemicsio" },
-      { "label": "How I made an epidemiology simulator in 6 weeks", "href": "#epidemics-post" }
-    ]
-  },
-  {
-    "title": "Lorem Ipsum Project Alpha",
-    "year": 2023,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "skills": ["Lorem", "Ipsum", "Dolor"],
-    "links": [
-      { "label": "GitHub - Lorem Ipsum Alpha", "href": "#lorem-ipsum-alpha" }
-    ]
-  },
-  {
-    "title": "Lorem Ipsum Project Beta",
-    "year": 2023,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "skills": ["Consectetur", "Adipiscing", "Elit"],
-    "links": [
-      { "label": "GitHub - Lorem Ipsum Beta", "href": "#lorem-ipsum-beta" }
-    ]
-  },
-  {
-    "title": "Lorem Ipsum Project Gamma",
-    "year": 2022,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    "skills": ["Tempor", "Incididunt", "Labore"],
-    "links": [
-      { "label": "GitHub - Lorem Ipsum Gamma", "href": "#lorem-ipsum-gamma" }
-    ]
-  },
-  {
-    "title": "Lorem Ipsum Project Delta",
-    "year": 2022,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "skills": ["Dolore", "Magna", "Aliqua"],
-    "links": [
-      { "label": "GitHub - Lorem Ipsum Delta", "href": "#lorem-ipsum-delta" }
-    ]
-  },
-  {
-    "title": "Lorem Ipsum Project Epsilon",
-    "year": 2021,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.",
-    "skills": ["Sed", "Do", "Eiusmod"],
-    "links": [
-      { "label": "GitHub - Lorem Ipsum Epsilon", "href": "#lorem-ipsum-epsilon" }
-    ]
-  },
-  {
-    "title": "Lorem Ipsum Project Zeta",
-    "year": 2021,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
-    "skills": ["Quis", "Autem", "Vel"],
-    "links": [
-      { "label": "GitHub - Lorem Ipsum Zeta", "href": "#lorem-ipsum-zeta" }
-    ]
-  },
-  {
-    "title": "Lorem Ipsum Project Eta",
-    "year": 2020,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.",
-    "skills": ["Vero", "Eos", "Accusamus"],
-    "links": [
-      { "label": "GitHub - Lorem Ipsum Eta", "href": "#lorem-ipsum-eta" }
-    ]
-  },
-  {
-    "title": "Lorem Ipsum Project Theta",
-    "year": 2020,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.",
-    "skills": ["Nam", "Libero", "Tempore"],
-    "links": [
-      { "label": "GitHub - Lorem Ipsum Theta", "href": "#lorem-ipsum-theta" }
+      { "label": "Live Demo", "href": "https://epidemicsio.streamlit.app/" },
+      { "label": "GitHub", "href": "https://github.com/Sweekrit-B/epidemicsio" }
     ]
   }
 ]

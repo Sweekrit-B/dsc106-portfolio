@@ -114,6 +114,36 @@ export function renderProjects(projects, containerElement, headingLevel = 'h3') 
 
   for (const project of projectList) {
     const article = document.createElement('article');
+    
+    // Extract YouTube video ID if video URL exists
+    let videoEmbed = '';
+    if (project.video) {
+      const videoUrl = new URL(project.video);
+      const videoId = videoUrl.searchParams.get('v');
+      if (videoId) {
+        videoEmbed = `
+          <div class="project-video">
+            <iframe 
+              width="100%" 
+              height="315" 
+              src="https://www.youtube.com/embed/${videoId}" 
+              title="${project.title} Video"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        `;
+      }
+    }
+    
+    // Determine image source: show original image if no video
+    let imageHTML = '';
+    if (!project.video) {
+      imageHTML = `<img src="${project.image}" alt="${project.title}">`;
+    }
+    
     const skills = Array.isArray(project.skills) && project.skills.length > 0
       ? `
         <section class="project-section project-skills-section">
@@ -144,7 +174,8 @@ export function renderProjects(projects, containerElement, headingLevel = 'h3') 
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
       <p class="project-year">${project.year ?? ''}</p>
-      <img src="${project.image}" alt="${project.title}">
+      ${imageHTML}
+      ${videoEmbed}
       <p>${project.description}</p>
       ${skills}
       ${links}
