@@ -421,6 +421,71 @@ button {
 	margin: 0 auto;
 }
 
+#chart .gridlines line {
+	stroke: color-mix(in oklch, canvastext 14%, canvas);
+	stroke-width: 1;
+	stroke-dasharray: 2 4;
+	opacity: 0.45;
+}
+
+#chart .gridlines path,
+#chart .gridlines .domain {
+	stroke: none;
+}
+
+#chart .gridlines text {
+	fill: color-mix(in oklch, canvastext 48%, canvas);
+	font-size: 0.8rem;
+}
+
+/* Selection / stats area improvements */
+#selection-count {
+	margin: 1rem 0 0.5rem 0;
+	font-size: clamp(1.25rem, 3.6vw, 2rem);
+	font-weight: 700;
+	color: canvastext;
+}
+
+#language-breakdown {
+	margin-top: 0.75rem;
+}
+
+/* Use a simple two-column layout for language breakdown entries */
+#language-breakdown dt,
+#language-breakdown dd {
+	margin: 0;
+}
+
+#language-breakdown {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 0.35rem 1rem;
+	align-items: baseline;
+}
+
+#language-breakdown dt {
+	font-size: 0.85rem;
+	letter-spacing: 0.06em;
+	text-transform: lowercase;
+	color: color-mix(in oklch, canvastext 56%, canvas);
+	font-weight: 700;
+}
+
+#language-breakdown dd {
+	font-size: clamp(1rem, 2.4vw, 1.35rem);
+	font-weight: 700;
+	color: canvastext;
+	display: flex;
+	gap: 0.6rem;
+	align-items: baseline;
+}
+
+#language-breakdown dd .pct {
+	color: color-mix(in oklch, canvastext 60%, canvas);
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
 .searchBar {
 	width: 100%;
 	padding: 0.75rem 1rem;
@@ -506,4 +571,109 @@ button {
 
 .clearButton:active {
 	transform: translateY(0);
+}
+
+dl.info {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 0.35rem 1rem;
+	align-items: baseline;
+	transition-duration: 500ms;
+	transition-property: opacity, visibility;
+}
+
+dl.info dt,
+dl.info dd {
+	margin: 0;
+}
+
+dl.info dt {
+	font-size: 0.72rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: color-mix(in oklch, canvastext 52%, canvas);
+	font-weight: 600;
+}
+
+dl.info dd {
+	font-size: 1rem;
+	font-weight: 650;
+	color: canvastext;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.tooltip {
+	position: fixed;
+	top: 1em;
+	left: 1em;
+	display: none;
+	max-width: 18rem;
+	padding: 0.9rem 1rem;
+	border: 1px solid color-mix(in oklch, canvastext 10%, canvas);
+	border-radius: 0.9rem;
+	background: color-mix(in oklch, canvas 88%, canvastext 12% / 72%);
+	box-shadow: 0 1rem 2.25rem color-mix(in oklch, canvastext 22%, transparent);
+	backdrop-filter: blur(10px) saturate(1.1);
+	-webkit-backdrop-filter: blur(10px) saturate(1.1);
+	z-index: 1000;
+	color: canvastext;
+}
+
+circle {
+	transition: 200ms;
+	transform-origin: center;
+	transform-box: fill-box;
+}
+
+circle:hover {
+	transform: scale(1.15);
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+	/* Visible but subtle fill using the site's accent color */
+	fill: color-mix(in oklch, var(--color-accent) 20%, canvas 80%);
+	fill-opacity: 0.09;
+	stroke: color-mix(in oklch, var(--color-accent) 60%, canvas);
+	stroke-opacity: 0.95;
+	stroke-width: 1.4;
+	stroke-dasharray: 6 4;
+	pointer-events: none; /* let mouse events pass through to underlying dots */
+	animation: marching-ants 2s linear infinite;
+	transition: opacity 160ms ease, transform 160ms ease;
+}
+
+/* Selected circles: make them pop with accent color, stroke and shadow */
+circle.selected {
+	fill: color-mix(in oklch, var(--color-accent) 55%, canvas 45%);
+	stroke: color-mix(in oklch, canvastext 60%, canvas);
+	stroke-width: 1.6;
+	transform-origin: center;
+	transform-box: fill-box;
+	transform: scale(1.18);
+	filter: drop-shadow(0 10px 18px color-mix(in oklch, var(--color-accent) 40%, transparent));
+	transition: transform 200ms cubic-bezier(.2,.9,.25,1), fill 200ms ease, stroke 200ms ease, filter 200ms ease;
+}
+
+/* When many points are present, non-selected points should fade a bit (helps focus) */
+circle:not(.selected) {
+	transition: opacity 200ms ease, transform 200ms ease, filter 200ms ease;
+}
+
+/* Helper utility: fade non-selected when a selection exists on the page.
+	 The JS can toggle a class on the parent SVG (e.g. `.has-selection`) to activate this.
+	 If you prefer not to toggle, the fade still works visually because selected circles override this rule. */
+#chart svg.has-selection circle:not(.selected) {
+	opacity: 0.35;
+	transform: scale(1);
+	filter: none;
 }
