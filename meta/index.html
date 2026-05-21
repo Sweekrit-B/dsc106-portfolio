@@ -16,38 +16,61 @@
 <body>
     <main class="content">
         <h1>Repository Meta Stats</h1>
-        <section id="chart">
-            <h2>Commits by time of day</h2>
-        </section>
-        <p id="selection-count">No commits selected</p>
-        <dl id="language-breakdown" class="stats"></dl>
-        <section id="stats"></section>
-        <dl id="commit-tooltip" class="info tooltip" hidden>
-            <dt>Commit</dt>
-            <dd>
-                <a href="" id="commit-link" target="_blank" rel="noreferrer"></a>
-            </dd>
+        <div id="scrolly-1">
+            <div id="scatter-story">
+                <p>Use the time slider to filter commits and compare activity patterns. Brush the plot to inspect selected commits and see the breakdown update live.</p>
+            </div>
+            <div id="scatter-plot">
+                <div id="commit-filter">
+                    <label>
+                        Filter by time:
+                        <input type="range" id="commit-progress" min="0" max="100" value="100">
+                        <time id="commit-filter-time">--:--</time>
+                    </label>
+                </div>
+                <section id="chart">
+                    <h2>Commits by time of day</h2>
+                </section>
+                <p id="selection-count">No commits selected</p>
+                <dl id="language-breakdown" class="stats"></dl>
+                <section id="stats"></section>
+                <dl id="commit-tooltip" class="info tooltip" hidden>
+                    <dt>Commit</dt>
+                    <dd>
+                        <a href="" id="commit-link" target="_blank" rel="noreferrer"></a>
+                    </dd>
 
-            <dt>Date</dt>
-            <dd>
-                <a href="" id="commit-date" target="_blank" rel="noreferrer"></a>
-            </dd>
+                    <dt>Date</dt>
+                    <dd>
+                        <a href="" id="commit-date" target="_blank" rel="noreferrer"></a>
+                    </dd>
 
-            <dt>Time</dt>
-            <dd>
-                <a href="" id="commit-time" target="_blank" rel="noreferrer"></a>
-            </dd>
+                    <dt>Time</dt>
+                    <dd>
+                        <a href="" id="commit-time" target="_blank" rel="noreferrer"></a>
+                    </dd>
 
-            <dt>Author</dt>
-            <dd>
-                <a href="" id="commit-author" target="_blank" rel="noreferrer"></a>
-            </dd>
+                    <dt>Author</dt>
+                    <dd>
+                        <a href="" id="commit-author" target="_blank" rel="noreferrer"></a>
+                    </dd>
 
-            <dt>Lines</dt>
-            <dd>
-                <a href="" id="commit-lines" target="_blank" rel="noreferrer"></a>
-            </dd>
-        </dl>
+                    <dt>Lines</dt>
+                    <dd>
+                        <a href="" id="commit-lines" target="_blank" rel="noreferrer"></a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
     </main>
+    <section id="scrolly-2">
+        <section id="files-section">
+            <h2>Line information</h2>
+            <dl id="files"></dl>
+        </section>
+        <div id="files-story">
+            <p>Scroll through the repository history again to watch the line information rebuild from the earliest commit.</p>
+        </div>
+    </section>
 </body>
 </html>
